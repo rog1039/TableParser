@@ -10,11 +10,12 @@
 
     public static class TableParserExtensions
     {
+
         public static string ToStringTable<T>(this IEnumerable<T> values, string[] columnHeaders, params Func<T, object>[] valueSelectors)
         {
             return ToStringTable(values.ToArray(), columnHeaders, valueSelectors);
         }
-
+        
         public static string ToStringTable<T>(this T[] values, string[] columnHeaders, params Func<T, object>[] valueSelectors)
         {
             Debug.Assert(columnHeaders.Length == valueSelectors.Length);
